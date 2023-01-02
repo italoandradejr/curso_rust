@@ -9,7 +9,7 @@ fn soma (a:i32, b:i32) -> i32 {
 
 
 fn sombra () {
-	let a = 12;
+	let _a = 12;
 
 	{
 		let b = 456;
@@ -31,7 +31,7 @@ println!("PI = {}", PI);
 	let decimal:f32 = 2.5;
 	println!("decimal = {}", decimal);
 
-	let mut booleana:bool = true;
+	let booleana:bool = true;
 	println!("Booleana = {}, tamanho booleana = {} bytes", booleana, std::mem::size_of_val(&booleana));
 
 	let letra:&str = "C";
@@ -43,5 +43,22 @@ fn main () {
 	escopo();	
 	sombra();
 	println!("soma = {}", soma(2,2));
-	
+	condicionais()
+}
+
+fn condicionais () {
+	let idade: u8 = 17;
+	let responsavel_autorizou = true;
+	let eh_maior = idade >= 18;
+
+	if eh_maior {
+		println!("pode entrar")
+	} else if idade > 16 && responsavel_autorizou{
+		println!("Pode entrar, responsavel autorizou")
+	} else {
+		println!("Não pode entrar!!!");
+	}
+
+	let condicao = if eh_maior {"maior"} else {"menor"};
+	println!("É {} de idade", condicao);
 }
