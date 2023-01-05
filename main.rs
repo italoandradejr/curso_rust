@@ -113,11 +113,13 @@ fn repeticoes () {
 }
 
 fn ownership () {
-	let uma_string = String::from("Italo");
-	rouba(uma_string);
+	let mut uma_string = String::from("Italo");
+	rouba(&mut uma_string);
 	
+	println!("{}", uma_string);
 }
 
-fn rouba (string: String) {
-	println!("{}", string)
+fn rouba (string: &mut String) {
+	string.push_str (" Andrade");
+	println!("{}", string);
 }
