@@ -1,0 +1,4 @@
+[package]
+name = "Alura_rust"
+version = "0.0.1"
+authors = ["Italo Andrade <italoandradejr@gmail.com>"]

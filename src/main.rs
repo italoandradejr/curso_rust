@@ -44,7 +44,8 @@ fn main () {
 	soma(2,2);
 	condicionais();
 	repeticoes();
-	ownership ();
+	ownership();
+	pattern_matching();
 }
 
 fn condicionais () {
@@ -122,4 +123,16 @@ fn ownership () {
 fn rouba (string: &mut String) {
 	string.push_str (" Andrade");
 	println!("{}", string);
+}
+
+fn pattern_matching () {
+	for x in 1..=20 {
+		println! ("{}: {}", x, match x {
+			1 => "Pouco",
+			2 | 3 => "Um pouquinho",
+			4..=10 => "Um Bocado",
+			__ if x % 2 == 0 => "uma Boa Quantidade par",
+			__ => "Uma boa Quantidade Impar"
+		});
+	}
 }
